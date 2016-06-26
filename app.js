@@ -17,8 +17,11 @@ var commentRoutes = require("./routes/comments"),
         authRoutes = require("./routes/index")
         
 // 建立一個db叫yelp_camp
+// local端的db當作測試區
+// console.log(process.env.DATABASEURL);
+mongoose.connect(process.env.DATABASEURL);
 // mongoose.connect("mongodb://localhost/yelp_camp");
-mongoose.connect("mongodb://EthanChou:chouethan@ds023674.mlab.com:23674/yelpcampethanchou");
+// mongoose.connect("mongodb://EthanChou:chouethan@ds023674.mlab.com:23674/yelpcampethanchou");
 
 // seed the db
 // seedDB();
