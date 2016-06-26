@@ -15,8 +15,11 @@ var express = require("express"),
 var commentRoutes = require("./routes/comments"),
         campgroundRoutes = require("./routes/campgrounds"),
         authRoutes = require("./routes/index")
+        
 // 建立一個db叫yelp_camp
-mongoose.connect("mongodb://localhost/yelp_camp");
+// mongoose.connect("mongodb://localhost/yelp_camp");
+mongoose.connect("mongodb://EthanChou:chouethan@ds023674.mlab.com:23674/yelpcampethanchou");
+
 // seed the db
 // seedDB();
 
