@@ -10,12 +10,12 @@ var express = require("express"),
     Comment = require("./models/comment"),
     User = require("./models/user"),
     seedDB = require("./seed")
-    
-// requiring routes    
+
+// requiring routes
 var commentRoutes = require("./routes/comments"),
         campgroundRoutes = require("./routes/campgrounds"),
         authRoutes = require("./routes/index")
-        
+
 // 建立一個db叫yelp_camp
 // local端的db當作測試區
 // console.log(process.env.DATABASEURL);
@@ -28,7 +28,7 @@ mongoose.connect(url);
 // seedDB();
 
 
-        
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -59,6 +59,10 @@ app.use("/",authRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/campgrounds",campgroundRoutes);
 
-app.listen(process.env.PORT, process.env.IP, function(){
+// app.listen(process.env.PORT, process.env.IP, function(){
+//     console.log("YelpCamp Server has started")
+// })
+
+app.listen(3000, function(){
     console.log("YelpCamp Server has started")
 })
